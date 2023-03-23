@@ -1,13 +1,24 @@
 <div class="wrapper">
-    <table class="table-main">
-        <tr class="headers">
-            <th (click)="sortById()">ID</th>
-            <th (click)="sortByTitle()">Title</th>
-        </tr>
-        <tr class="table-row" *ngFor="let post of posts">
-            <td class="table-data">{{post.id}}</td>
-            <td class="table-data">{{post.title | titlecase}}</td>
-        </tr>
-
-    </table>
+  <table class="table-main">
+    <tr class="headers">
+      <th  class="id" (click)="sortById()">
+        <span *ngIf="this.titleSort === false">
+          <mat-icon *ngIf="this.idAsc === true">arrow_drop_down</mat-icon
+          ><mat-icon *ngIf="this.idAsc === false">arrow_drop_up</mat-icon>
+        </span>
+        ID
+      </th>
+      <th (click)="sortByTitle()">
+        <span *ngIf="this.titleSort === true">
+          <mat-icon *ngIf="this.titleAsc === true">arrow_drop_down</mat-icon
+          ><mat-icon *ngIf="this.titleAsc === false">arrow_drop_up</mat-icon>
+        </span>
+        Title
+      </th>
+    </tr>
+    <tr class="table-row" *ngFor="let post of posts">
+      <td class="table-data">{{ post.id }}</td>
+      <td class="table-data">{{ post.title | titlecase }}</td>
+    </tr>
+  </table>
 </div>
