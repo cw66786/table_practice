@@ -4,9 +4,9 @@
             <th>ID</th>
             <th>Title</th>
         </tr>
-        <tr class="table-row" *ngFor="let post of posts">
+        <tr class="table-row" *ngFor="let post of posts | orderBy: 'id'"{{post.id}}>
             <td class="table-data">{{post.id}}</td>
-            <td class="table-data">{{post.title}}</td>
+            <td class="table-data">{{post.title | titlecase}}</td>
         </tr>
 
     </table>
