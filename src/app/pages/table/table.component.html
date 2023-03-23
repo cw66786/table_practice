@@ -1,10 +1,10 @@
 <div class="wrapper">
     <table class="table-main">
         <tr class="headers">
-            <th>ID</th>
-            <th>Title</th>
+            <th (click)="sortById()">ID</th>
+            <th (click)="sortByTitle()">Title</th>
         </tr>
-        <tr class="table-row" *ngFor="let post of posts | orderBy: 'id'"{{post.id}}>
+        <tr class="table-row" *ngFor="let post of posts">
             <td class="table-data">{{post.id}}</td>
             <td class="table-data">{{post.title | titlecase}}</td>
         </tr>

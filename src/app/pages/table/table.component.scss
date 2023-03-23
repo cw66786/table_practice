@@ -12,6 +12,8 @@
 
 }
 
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -22,6 +24,16 @@ table {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
+  }
+
+  td:hover,th:hover{
+   
+    background-color: blue;
+    color: white;
+  }
+
+  th{
+    cursor: pointer;
   }
   
   tr:nth-child(even) {
